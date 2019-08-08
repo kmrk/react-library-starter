@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import loading from './media/loading.svg';
+import logo from './media/logo.svg';
 require("./media/demo.css")// css require
 
 class MyButton extends React.PureComponent {
@@ -10,7 +10,7 @@ class MyButton extends React.PureComponent {
     const TestStyledButton = styled.button`
       width:100px;
       height:100px;
-      background:url(${loading}) no-repeat;
+      background:url(${logo}) no-repeat;
     `
     return (<TestStyledButton></TestStyledButton> );
   }

@@ -1,0 +1,56 @@
+{
+  "name": "react-library-starter",
+  "version": "1.0.0",
+  "description": "react ui lib starter kit",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist/commonjs",
+    "dist/esm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kmrk/react-library-starter.git"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "dev": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -s .storybook/static -o .out",
+    "build-commonjs": "BABEL_ENV=commonjs babel src/ --out-dir dist/commonjs --ignore '**/test','**/stories' --source-maps inline && ./scripts/--copy-files src dist/commonjs",
+    "build-esm": "BABEL_ENV=esm babel src --out-dir dist/esm --ignore '**/test','**/stories' --source-maps inline && ./scripts/--copy-files src dist/esm",
+    "build": "rimraf dist && concurrently --names 'commonjs,esm' 'npm run build-commonjs' 'npm run build-esm'"
+  },
+  
+  "keywords": [
+    "react",
+    "storybook",
+    "styled-components",
+    "ui-library-starter-kit"
+  ],
+  "author": "kmrk",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-links": "^5.1.10",
+    "@storybook/addons": "^5.1.10",
+    "@storybook/react": "^5.1.10",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
+    "concurrently": "^4.1.1",
+    "fs-extra": "^8.1.0",
+    "rimraf": "^2.6.3",
+    "styled-components": "^4.3.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.3.2"
+  }
+}

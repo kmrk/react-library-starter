@@ -24,3 +24,5 @@ yarn run dev
 yarn run build
 npm publish 
 ```
+
+![](snapshot.png)
